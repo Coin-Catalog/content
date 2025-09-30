@@ -1,19 +1,17 @@
-export default async function CoinEntry({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+import { headers } from "next/headers";
 
-    const { slug } = await params;
+export default async function CoinEntry({ params }: { params: Promise<{ coins: string[] }> }) {
+    const headersList = await headers();
+    const domain = headersList.get("host");
 
-    console.log(slug)
+    const { coins } = await params;
 
-
-    //const res: any = await fetch(`../api/coins?category=${cat}&entry=${entry}`);
+    const res: any = await fetch(`http://${domain}/api/coins?category=${coins[0]}&entry=${coins[1]}`);
+    const json = await res.json();
 
     return (
         <>
-            {"Hello World"}
+            <span dangerouslySetInnerHTML={{ __html: json["html"]}}></span>
         </>
     )
 } 
