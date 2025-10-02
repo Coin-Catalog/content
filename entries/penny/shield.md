@@ -1,9 +1,9 @@
 ---
 title: Shield Penny
 codeTitle: shieldCent
-obverse: /coin/pennies/SC/PNGs/flyingEagleObverse.png
-reverse: /coin/pennies/SC/PNGs/flyingEagleReverse.png
-full: /coin/pennies/SC/PNGs/flyingEagle.png
+obverse: /coins/penny/SC/PNGs/shieldPenniesObverse.png
+reverse: /coins/penny/SC/PNGs/shieldPenniesReverse.png
+full: /coins/penny/SC/PNGs/shieldPennies.png
 datesMinted: 2010-Present
 Mints: [Philadelphia, Denver, San Francisco]
 mintage: 87,662,371,984+
