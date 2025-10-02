@@ -1,0 +1,17 @@
+.all {
+    display: flex;
+    gap: 1vw;
+
+    position: absolute;
+    left: 0;
+
+    width: fit-content;
+
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+}
+
+.card {
+    height: 25vh;
+    width: 20vw;
+}

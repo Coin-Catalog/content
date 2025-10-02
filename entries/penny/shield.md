@@ -1,6 +1,6 @@
 ---
 title: Shield Penny
-codeTitle: shieldCent
+codeTitle: shield
 obverse: /coins/penny/SC/PNGs/shieldPenniesObverse.png
 reverse: /coins/penny/SC/PNGs/shieldPenniesReverse.png
 full: /coins/penny/SC/PNGs/shieldPennies.png
@@ -10,10 +10,10 @@ mintage: 87,662,371,984+
 Designer: 'Obverse Victor D. Brenner, reverse: Lyndall Bass'
 related:
   [
-    [pennies, pennies2009],
-    [pennies, memorialPennies],
-    [pennies, wheatPennies],
-    [pennies, indianHead],
+    [penny, pennies2009],
+    [penny, memorialPennies],
+    [penny, wheatPennies],
+    [penny, indianHead],
   ]
 cat: penny
 ---

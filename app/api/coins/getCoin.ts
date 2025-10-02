@@ -14,7 +14,19 @@ export async function GET(req: NextRequest) {
 
     const postsDirectory = path.join(process.cwd(), `entries/${cat}`);
     const fullPath = path.join(postsDirectory, `${entry}.md`);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    let fileContents: string;
+
+    try {
+        fileContents = fs.readFileSync(fullPath, 'utf8');
+    } catch (e) {
+        return NextResponse.json(
+            {
+                "error": e
+            },
+            { status: 400 }
+        );
+    };
+    
 
     // Use gray-matter to parse the post metadata section
     const matterResult: any = matter(fileContents);
