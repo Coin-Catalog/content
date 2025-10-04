@@ -1,3 +1,3 @@
-import { GET } from "./getCoin";
+import { GET } from "./getType";
 
 export { GET };

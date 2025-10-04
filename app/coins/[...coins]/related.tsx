@@ -13,7 +13,7 @@ export async function RelatedCoins(props: any) {
     const relatedMetaData = [];
 
     for (let i = 0; i < related.length; i++) {
-        const res: any = await fetch(`http://${domain}/api/coins?category=${related[i][0]}&entry=${related[i][1]}`);
+        const res: any = await fetch(`http://${domain}/api/coins/coins?category=${related[i][0]}&entry=${related[i][1]}`);
         const json = await res.json();
         const metaData = json["metaData"];
 

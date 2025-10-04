@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 
 import { Link } from "@heroui/link";
-import { Card, CardBody, CardFooter } from "@heroui/card";
+import { Card, CardFooter } from "@heroui/card";
 
 import styles from "../../styles/coins/coins.module.css"
 

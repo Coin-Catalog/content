@@ -1,6 +1,9 @@
 import { headers } from "next/headers";
 import { redirect, RedirectType } from 'next/navigation';
 
+import { Link } from "@heroui/link";
+import { Card, CardFooter } from "@heroui/card";
+
 import { RelatedCoins } from "./related";
 
 import styles from "../../../styles/coins/coins/page.module.css";
@@ -18,16 +21,39 @@ export default async function CoinEntry({ params }: { params: Promise<{ coins: s
 
     // Coin type pages | Ex: pennies
     if (coins.length == 1) {
+        const res: any = await fetch(`http://${domain}/api/coins?category=${coins[0]}`);
+        const json = await res.json();
+
+        interface MetaData {
+            name: string,
+            codeTitle: string,
+            full: string
+        };
+
+        const metaData: MetaData[] = json["coins"];
+
         return (
             <>
-                <h1>This is a coin type page!</h1>
+                <h1>{coins[0].charAt(0).toUpperCase() + coins[0].slice(1)}</h1>
+
+                {metaData.map((coin: MetaData) => (
+                    <Link key={coin["name"]} href={`http://${domain}/coins/${coins[0]}/${coin["codeTitle"]}`}>
+                        <Card isFooterBlurred className={`border-none ${styles.card}`} radius="lg">
+                            <img src={coin["full"]} alt={coin["name"]} />
+
+                            <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+                                <p>{coin["name"]}</p>
+                            </CardFooter>
+                        </Card>
+                    </Link>
+                ))}
             </>
-        )
+        );
     };
 
     // For specific coin | Ex: Shield penny
 
-    const res: any = await fetch(`http://${domain}/api/coins?category=${coins[0]}&entry=${coins[1]}`);
+    const res: any = await fetch(`http://${domain}/api/coins/coins?category=${coins[0]}&entry=${coins[1]}`);
     const json = await res.json();
     const metaData = json["metaData"];
 
