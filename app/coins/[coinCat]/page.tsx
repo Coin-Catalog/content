@@ -6,6 +6,7 @@ import { Link } from "@heroui/link";
 import { Card, CardFooter } from "@heroui/card";
 import { Breadcrumbs, BreadcrumbItem } from "@heroui/breadcrumbs";
 import { Skeleton } from "@heroui/skeleton";
+import { addToast } from '@heroui/toast';
 
 import { getAPI } from '@/helpers/getAPI';
 
@@ -45,6 +46,12 @@ export default function CoinEntry({ params }: { params: Promise<{ coinCat: strin
 
     if (jsonError) {
         console.log(jsonError);
+        
+        addToast({
+            title: "Something went wrong",
+            description: "Unable to get coin data. More info in browser console",
+            color: "danger",
+        });
 
         return (
             <>

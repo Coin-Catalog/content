@@ -4,6 +4,7 @@ import { use, useEffect, useState } from "react";
 
 import { Skeleton } from "@heroui/skeleton";
 import { Breadcrumbs, BreadcrumbItem } from "@heroui/breadcrumbs";
+import { addToast } from "@heroui/toast";
 
 import { RelatedCoins } from "./related";
 
@@ -61,6 +62,12 @@ export default function Coin({ params }: { params: Promise<{ coin: string }> }) 
 
     if (jsonError) {
         console.log(jsonError);
+
+        addToast({
+            title: "Something went wrong",
+            description: "Unable to get coin data. More info in browser console",
+            color: "danger",
+        });
 
         return (
             <Skeleton>

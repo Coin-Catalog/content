@@ -3,6 +3,7 @@
 import { Card, CardFooter } from "@heroui/card";
 import { Link } from "@heroui/link";
 import { Skeleton } from "@heroui/skeleton";
+import { addToast } from "@heroui/toast";
 
 import { getAPI } from "@/helpers/getAPI";
 
@@ -77,6 +78,12 @@ export function RelatedCoins(props: any) {
 
     if (jsonError) {
         console.log(jsonError);
+
+        addToast({
+            title: "Something went wrong",
+            description: "Unable to get related coin data. More info in browser console",
+            color: "danger",
+        });
 
         return (
             <>

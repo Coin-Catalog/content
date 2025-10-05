@@ -20,6 +20,7 @@
     "@heroui/switch": "2.2.23",
     "@heroui/system": "2.4.22",
     "@heroui/theme": "2.4.22",
+    "@heroui/toast": "^2.0.17",
     "@heroui/tooltip": "2.2.23",
     "@react-aria/ssr": "3.9.10",
     "@react-aria/visually-hidden": "3.8.27",
