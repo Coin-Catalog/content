@@ -14,8 +14,6 @@ export default function CoinCats() {
         setDomain(window.location.href);
     });
 
-    console.log(domain)
-
     interface coinType {
         name: string,
         description: string,

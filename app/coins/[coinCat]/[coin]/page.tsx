@@ -1,12 +1,97 @@
 'use client';
 
-import { RelatedCoins } from "../related";
+import { use, useEffect, useState } from "react";
 
-export default function Coin() {
+import { Skeleton } from "@heroui/skeleton";
+
+import { RelatedCoins } from "./related";
+
+import { getAPI } from "@/helpers/getAPI";
+
+import styles from "../../../../styles/coins/coins/page.module.css";
+
 // For specific coin | Ex: Shield penny
+export default function Coin({ params }: { params: Promise<{ coin: string }> }) {
+    const { coin } = use(params);
 
-    const res: any = await fetch(`http://${domain}/api/coins/coins?category=${coins[0]}&entry=${coins[1]}`);
-    const json = await res.json();
+    const [domain, setDomain] = useState("");
+
+    useEffect(() => {
+        setDomain(window.location.href);
+    });
+
+    const domainParts = domain.split("/");
+    const category = domainParts[domainParts.length -2];
+
+    const {json, jsonLoading, jsonError} = getAPI(`../../../api/coins/coins?category=${category}&entry=${coin}`, ["json", "jsonLoading", "jsonError"]);
+
+    if (jsonLoading) {
+        return (
+            <Skeleton>
+                <span className={`${styles.grid}`}>
+                    <div className={`${styles.col1}`}>
+                    <h1>Some coin name</h1>
+
+                    <img src={"/coins/penny/SC/PNGs/shieldPennies.png"} alt="Obverse and reverse of coin" />
+                    <p>Designer: Some random person</p>
+
+                    <br />
+                    
+                    <p>1900-1900</p>
+
+                    <br />
+
+                    <ul>
+                        <li>Mintage: Pi I think</li>
+                        <li>Mints: I think the the Antartica mint</li>
+
+                    </ul>
+                    </div>
+
+                    <div className={`${styles.col2}`}>
+                        <h2>Description</h2>
+                        <p>This coin was really cool because this is a real coin.</p>
+                    </div>
+                </span>
+            </Skeleton>
+        );
+    }
+
+
+    if (jsonError) {
+        console.log(jsonError);
+
+        return (
+            <Skeleton>
+                <span className={`${styles.grid}`}>
+                    <div className={`${styles.col1}`}>
+                    <h1>Some coin name</h1>
+
+                    <img src={"/coins/penny/SC/PNGs/shieldPennies.png"} alt="Obverse and reverse of coin" />
+                    <p>Designer: Some random person</p>
+
+                    <br />
+                    
+                    <p>1900-1900</p>
+
+                    <br />
+
+                    <ul>
+                        <li>Mintage: Pi I think</li>
+                        <li>Mints: I think the the Antartica mint</li>
+
+                    </ul>
+                    </div>
+
+                    <div className={`${styles.col2}`}>
+                        <h2>Description</h2>
+                        <p>This coin was really cool because this is a real coin.</p>
+                    </div>
+                </span>
+            </Skeleton>
+        );
+    }
+
     const metaData = json["metaData"];
 
     return (
@@ -36,7 +121,7 @@ export default function Coin() {
 
             <br />
 
-            <RelatedCoins related={metaData["related"]} />
+             <RelatedCoins related={metaData["related"]} />
         </>
     );
 };

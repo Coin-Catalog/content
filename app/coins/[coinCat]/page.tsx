@@ -1,6 +1,6 @@
 'use client';
 
-import { use } from 'react'
+import { use } from 'react';
 
 import { Link } from "@heroui/link";
 import { Card, CardFooter } from "@heroui/card";
@@ -81,7 +81,7 @@ export default function CoinEntry({ params }: { params: Promise<{ coinCat: strin
 
     return (
         <>
-            <h1>{coinCat[0].charAt(0).toUpperCase() + coinCat[0].slice(1)}</h1>
+            <h1>{coinCat[0].charAt(0).toUpperCase() + coinCat[0].slice(1) + coinCat.substring(1)}</h1>
 
             <Breadcrumbs>
                 <BreadcrumbItem href={`../`}>/</BreadcrumbItem>
@@ -90,7 +90,7 @@ export default function CoinEntry({ params }: { params: Promise<{ coinCat: strin
             </Breadcrumbs>
 
             {metaData.map((coin: MetaData) => (
-                <Link key={coin["name"]} href={`./${coin["codeTitle"]}`}>
+                <Link key={coin["name"]} href={`./${coinCat}/${coin["codeTitle"]}`}>
                     <Card isFooterBlurred className={`border-none ${styles.card}`} radius="lg">
                         <img src={coin["full"]} alt={coin["name"]} />
 
