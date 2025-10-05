@@ -7,7 +7,18 @@ export async function GET(req: NextRequest) {
 
     const searchParams = req.nextUrl.searchParams;
     
-    const coins: string[][] = JSON.parse(searchParams.get("coins"));
+    const coinParam: string | null = searchParams.get("coins");
+
+    if (!coinParam) {
+        return NextResponse.json(
+            {
+                "error": "coins parameter is not formatted correctly"
+            },
+            { status: 400 }
+        );
+    };
+
+    const coins: string[][] = JSON.parse(coinParam);
     
     if (coins.length != 4) {
         return NextResponse.json(
