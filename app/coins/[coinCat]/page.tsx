@@ -47,12 +47,14 @@ export default function CoinEntry({ params }: { params: Promise<{ coinCat: strin
     if (jsonError) {
         console.log(jsonError);
         
+        /*
         addToast({
             title: "Something went wrong",
             description: "Unable to get coin data. More info in browser console",
             color: "danger",
         });
-
+        */
+       
         return (
             <>
                 <h1>{coinCat[0].charAt(0).toUpperCase() + coinCat[0].slice(1)}</h1>

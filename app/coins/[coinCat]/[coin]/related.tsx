@@ -79,12 +79,14 @@ export function RelatedCoins(props: any) {
     if (jsonError) {
         console.log(jsonError);
 
+        /*
         addToast({
             title: "Something went wrong",
             description: "Unable to get related coin data. More info in browser console",
             color: "danger",
         });
-
+        */
+       
         return (
             <>
                 <Skeleton>

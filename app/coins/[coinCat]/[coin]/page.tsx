@@ -63,12 +63,14 @@ export default function Coin({ params }: { params: Promise<{ coin: string }> }) 
     if (jsonError) {
         console.log(jsonError);
 
+        /*
         addToast({
             title: "Something went wrong",
             description: "Unable to get coin data. More info in browser console",
             color: "danger",
         });
-
+        */
+       
         return (
             <Skeleton>
                 <span className={`${styles.grid}`}>

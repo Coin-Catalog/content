@@ -1,5 +1,6 @@
 .grid {
     display: grid;
+    gap: 2vw;
 }
 
 .col1 {
@@ -12,8 +13,13 @@
 
 .col2 {
     grid-column: 2;
+
+    padding-top: 5vh;
 }
 
 .card {
     max-width: 20vw;
+
+    margin-right: 1vw;
+    margin-bottom: 1vw;
 }
