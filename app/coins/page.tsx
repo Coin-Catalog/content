@@ -20,7 +20,7 @@ export default function Coins() {
             <br />
 
             <Breadcrumbs>
-                <BreadcrumbItem href={`http://${domain}`}>/</BreadcrumbItem>
+                <BreadcrumbItem href={`../`}>/</BreadcrumbItem>
                 <BreadcrumbItem href={`http://${domain}/coins`}>coins</BreadcrumbItem>
             </Breadcrumbs>
 

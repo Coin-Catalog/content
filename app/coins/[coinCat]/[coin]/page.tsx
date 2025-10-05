@@ -3,6 +3,7 @@
 import { use, useEffect, useState } from "react";
 
 import { Skeleton } from "@heroui/skeleton";
+import { Breadcrumbs, BreadcrumbItem } from "@heroui/breadcrumbs";
 
 import { RelatedCoins } from "./related";
 
@@ -99,6 +100,13 @@ export default function Coin({ params }: { params: Promise<{ coin: string }> }) 
             <span className={`${styles.grid}`}>
                 <div className={`${styles.col1}`}>
                 <h1>{metaData["title"]}</h1>
+
+                <Breadcrumbs>
+                    <BreadcrumbItem href={`../`}>/</BreadcrumbItem>
+                    <BreadcrumbItem href={`/coins`}>coins</BreadcrumbItem>
+                    <BreadcrumbItem href={`/coins/${category}`}>{category}</BreadcrumbItem>
+                    <BreadcrumbItem href={`/coins/${category}/${coin}`}>{coin}</BreadcrumbItem>
+                </Breadcrumbs>
 
                 <img src={metaData["full"]} alt="Obverse and reverse of coin" />
                 <p>Designer: {metaData["Designer"]}</p>
