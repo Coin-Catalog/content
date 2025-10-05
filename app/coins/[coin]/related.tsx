@@ -1,20 +1,18 @@
-import { headers } from "next/headers";
+'use client';
 
 import { Card, CardFooter } from "@heroui/card";
 import { Link } from "@heroui/link";
 
 import styles from "../../../styles/coins/coins/related.module.css";
 
-export async function RelatedCoins(props: any) {
-    const headersList = await headers();
-    const domain = headersList.get("host");
-
+export function RelatedCoins(props: any) {
     const related: string[][] = props.related;
     const relatedMetaData = [];
 
     for (let i = 0; i < related.length; i++) {
-        const res: any = await fetch(`http://${domain}/api/coins/coins?category=${related[i][0]}&entry=${related[i][1]}`);
-        const json = await res.json();
+        const res: any = fetch(`../../api/coins/coins?category=${related[i][0]}&entry=${related[i][1]}`)
+        .then(res)
+        const json = res.json();
         const metaData = json["metaData"];
 
         relatedMetaData.push(metaData);
@@ -23,7 +21,7 @@ export async function RelatedCoins(props: any) {
     return (
         <div className={`${styles.all}`}>
             {relatedMetaData.map((coin: any) => (
-                <Link key={coin["title"]} href={`http://${domain}/coins/${coin["cat"]}/${coin["codeTitle"]}`}>
+                <Link key={coin["title"]} href={`/${coin["cat"]}/${coin["codeTitle"]}`}>
                     <Card isFooterBlurred className={`border-none ${styles.card}`} radius="lg">
                         <img src={coin["full"]} alt={coin["title"]} />
 

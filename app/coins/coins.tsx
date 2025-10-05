@@ -1,13 +1,20 @@
-import { headers } from "next/headers";
+'use client';
+
+import { useState, useEffect } from "react";
 
 import { Link } from "@heroui/link";
 import { Card, CardFooter } from "@heroui/card";
 
 import styles from "../../styles/coins/coins.module.css"
 
-export default async function CoinCats() {
-    const headersList = await headers();
-    const domain = headersList.get("host");
+export default function CoinCats() {
+    const [domain, setDomain] = useState("");
+
+    useEffect(() => {
+        setDomain(window.location.href);
+    });
+
+    console.log(domain)
 
     interface coinType {
         name: string,
@@ -26,7 +33,7 @@ export default async function CoinCats() {
     return (
         <span className={`${styles.coinCats}`}>
             {coins.map((coin: coinType) => (
-                <Link key={coin["name"]} href={`http://${domain}/coins/${coin["name"]}`} className={`${styles.coin}`}>
+                <Link key={coin["name"]} href={`${domain}/${coin["name"]}`} className={`${styles.coin}`}>
                     <Card isFooterBlurred>
                         <img src={coin["image"]} alt={coin["name"]} />
                         
