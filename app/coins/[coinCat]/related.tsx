@@ -10,9 +10,12 @@ export function RelatedCoins(props: any) {
     const relatedMetaData = [];
 
     for (let i = 0; i < related.length; i++) {
+        let json: any;
+
         const res: any = fetch(`../../api/coins/coins?category=${related[i][0]}&entry=${related[i][1]}`)
-        .then(res)
-        const json = res.json();
+        .then(res => res.json())
+        .then(formatted => json = formatted)
+
         const metaData = json["metaData"];
 
         relatedMetaData.push(metaData);
