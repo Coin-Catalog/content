@@ -114,7 +114,7 @@ export default function Coin({ params }: { params: Promise<{ coin: string }> }) 
                     <BreadcrumbItem href={`../`}>/</BreadcrumbItem>
                     <BreadcrumbItem href={`/coins`}>coins</BreadcrumbItem>
                     <BreadcrumbItem href={`/coins/${category}`}>{category}</BreadcrumbItem>
-                    <BreadcrumbItem href={`/coins/${category}/${coin}`}>{coin}</BreadcrumbItem>
+                    <BreadcrumbItem href={`/coins/${category}/${coin}`}>{metaData["title"]}</BreadcrumbItem>
                 </Breadcrumbs>
 
                 <img src={metaData["full"]} alt="Obverse and reverse of coin" />

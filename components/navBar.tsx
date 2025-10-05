@@ -6,7 +6,9 @@ import { ThemeSwitch } from "@/components/theme-switch";
 export function Nav() {
     return (
         <Navbar>
-            <NavbarBrand>Coin Catalog</NavbarBrand>
+            <NavbarBrand>
+                <Link href="/">Coin Catalog</Link>
+            </NavbarBrand>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem>
