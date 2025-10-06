@@ -150,6 +150,8 @@ export function RelatedCoins(props: any) {
 
     const relatedMetaData: string[][] = json["metaData"];
 
+    console.log(relatedMetaData)
+
     return (
         <div className={`${styles.all}`}>
             {relatedMetaData.map((coin: any) => (

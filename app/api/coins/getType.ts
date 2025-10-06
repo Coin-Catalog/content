@@ -34,6 +34,8 @@ async function GET(req: NextRequest) {
         });
     };
 
+    
+
     return NextResponse.json(
         {
             coins: metaData

@@ -21,6 +21,11 @@ export default function CoinCats() {
             name: "penny",
             description: "One cent peice minted since 1792",
             image: "/coins/penny/SC/PNGs/shieldPennies.png"
+        },
+        {
+            name: "nickel",
+            description: "Fice cent peice minted since 1792",
+            image: "/coins/nickel/JPEGs/shieldNickel-full.jpeg"
         }
     ];
 
