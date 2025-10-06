@@ -6,6 +6,8 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
+import { MetaData } from "@/helpers/types";
+
 async function GET(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams;
     
@@ -13,12 +15,6 @@ async function GET(req: NextRequest) {
 
     const postsDirectory = path.join(process.cwd(), `entries/${cat}`);
     const files = fs.readdirSync(postsDirectory);
-
-    interface MetaData {
-        name: string,
-        codeTitle: string,
-        full: string
-    };
 
     const metaData: MetaData[] = [];
 

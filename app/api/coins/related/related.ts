@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { headers } from "next/headers";
+
+import { getDomain } from "@/helpers/getDomain/server";
+
+import { MetaData } from "@/helpers/types";
 
 export async function GET(req: NextRequest) {
-    const headersList = await headers();
-    const domain = headersList.get("host");
+    const domain = await getDomain()
 
     const searchParams = req.nextUrl.searchParams;
     
@@ -27,12 +29,6 @@ export async function GET(req: NextRequest) {
             },
             { status: 400 }
         );
-    };
-
-    interface MetaData {
-        name: string,
-        codeTitle: string,
-        full: string
     };
 
     const metaData: MetaData[] = [];

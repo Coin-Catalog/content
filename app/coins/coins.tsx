@@ -5,7 +5,9 @@ import { useState, useEffect } from "react";
 import { Link } from "@heroui/link";
 import { Card, CardFooter } from "@heroui/card";
 
-import styles from "../../styles/coins/coins.module.css"
+import { coinType } from "@/helpers/types";
+
+import styles from "../../styles/coins/coins.module.css";
 
 export default function CoinCats() {
     const [domain, setDomain] = useState("");
@@ -13,12 +15,6 @@ export default function CoinCats() {
     useEffect(() => {
         setDomain(window.location.href);
     });
-
-    interface coinType {
-        name: string,
-        description: string,
-        image: string
-    };
 
     const coins: coinType[] = [
         {
