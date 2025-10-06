@@ -1,7 +1,6 @@
 ---
 title: Flying Eagle cent
 codeTitle: flyingEagle
-id: '1'
 obverse: /coins/penny/SC/PNGs/flyingEagleObverse.png
 reverse: /coins/penny/SC/PNGs/flyingEagleReverse.png
 full: /coins/penny/SC/PNGs/flyingEagle.png

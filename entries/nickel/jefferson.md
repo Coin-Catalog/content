@@ -1,7 +1,6 @@
 ---
 title: 'Jefferson nickel'
 codeTitle: jefferson
-id: '10'
 obverse: '/favicon.ico'
 reverse: '/favicon.ico'
 full: '/favicon.ico'

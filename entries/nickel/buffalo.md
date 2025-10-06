@@ -1,7 +1,6 @@
 ---
 title: 'Buffalo nickel'
 codeTitle: buffalo
-id: '9'
 obverse: '/favicon.ico'
 reverse: '/favicon.ico'
 full: '/favicon.ico'

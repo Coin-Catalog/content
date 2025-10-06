@@ -1,7 +1,6 @@
 ---
 title: 'Memorial cent'
 codeTitle: 'memorialPennies'
-id: '4'
 obverse: /coins/penny/SC/PNGs/memorialPenniesObverse.png
 reverse: /coins/penny/SC/PNGs/memorialPenniesReverse.png
 full: /coins/penny/SC/PNGs/memorialPennies.png

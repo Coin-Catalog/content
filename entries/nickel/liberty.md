@@ -1,7 +1,6 @@
 ---
 title: 'Liberty Nickel'
 codeTitle: liberty
-id: '8'
 obverse: /favicon.ico
 reverse: /favicon.ico
 full: /favicon.ico

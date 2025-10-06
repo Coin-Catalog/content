@@ -1,7 +1,6 @@
 ---
 title: 'Shield nickel'
 codeTitle: shield
-id: '7'
 obverse: '/coins/nickel/JPEGs/shieldNickel-obverse.jpeg'
 reverse: '/coins/nickel/JPEGs/shieldNickel-reverse.jpeg'
 full: '/coins/nickel/JPEGs/shieldNickel-full.jpeg'

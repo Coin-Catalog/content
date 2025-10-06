@@ -1,7 +1,6 @@
 ---
 title: 'Indian Head cent'
 codeTitle: 'indianHead'
-id: '2'
 obverse: /coins/penny/SC/PNGs/indianHeadObverse.png
 reverse: /coins/penny/SC/PNGs/indianHeadReverse.png
 full: /coins/penny/SC/PNGs/indianHead.png

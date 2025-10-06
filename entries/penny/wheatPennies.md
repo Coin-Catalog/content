@@ -1,7 +1,6 @@
 ---
 title: 'Wheat cent'
 codeTitle: 'wheatPennies'
-id: '3'
 obverse: /coins/penny/SC/PNGs/wheatPenniesObverse.png
 reverse: /coins/penny/SC/PNGs/wheatPenniesReverse.png
 full: /coins/penny/SC/PNGs/wheatPennies.png

@@ -1,7 +1,6 @@
 ---
 title: '2009 pennies'
 codeTitle: 'pennies2009'
-id: '5'
 obverse: /coins/penny/SC/PNGs/pennies2009.png
 reverse: /coins/penny/SC/PNGs/pennies2009.png
 full: /coins/penny/SC/PNGs/pennies2009.png

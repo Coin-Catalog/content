@@ -1,7 +1,6 @@
 ---
 title: 'Westward Journey nickel'
 codeTitle: westward
-id: '11'
 obverse: '/favicon.ico'
 reverse: '/favicon.ico'
 full: '/favicon.ico'
