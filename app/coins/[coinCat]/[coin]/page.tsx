@@ -10,7 +10,7 @@ import { RelatedCoins } from "./related";
 
 import { getAPI } from "@/helpers/getAPI";
 
-import styles from "../../../../styles/coins/coins/page.module.css";
+import styles from "../../../../styles/coins/coins/coin/page.module.css";
 
 // For specific coin | Ex: Shield penny
 export default function Coin({ params }: { params: Promise<{ coin: string }> }) {

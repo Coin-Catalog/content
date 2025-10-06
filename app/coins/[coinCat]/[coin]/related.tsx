@@ -7,7 +7,7 @@ import { addToast } from "@heroui/toast";
 
 import { getAPI } from "@/helpers/getAPI";
 
-import styles from "../../../../styles/coins/coins/related.module.css";
+import styles from "../../../../styles/coins/coins/coin/related.module.css";
 
 export function RelatedCoins(props: any) {
     const related: string[][] = props.related;
